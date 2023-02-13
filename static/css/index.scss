@@ -331,14 +331,14 @@ details {
     }
   }
 }
-
-#TableOfContents {
+.TableOfContents {
   margin-left: 102%;
   height: 0;
   position: sticky;
   top: 80px;
   width: 300px;
-
+}
+#TableOfContents {
   & > ul {
     border-radius: 0;
     padding-left: 10px;
@@ -804,7 +804,7 @@ details {
 }
 
 @media (max-width: 1360px) {
-  #TableOfContents {
+  .TableOfContents {
     width: 100%;
     position: static;
     margin: 0;
@@ -919,7 +919,6 @@ details {
   }
 
   .post-title {
-    font-size: 22px;
     font-weight: 600;
   }
 
