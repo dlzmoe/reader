@@ -1,0 +1,54 @@
+{{ partial "header.html" . }}
+<div class="post-header">
+  <h1 class="post-title">{{ .Title }}</h1>
+  {{ if in .Site.Params.mainSections .Type }}
+  <div class="post-desc">
+    <div class="post-date">
+      {{ if .Date }}
+      <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
+        发布于 {{ .Date.Format "2006-01-02" }}
+      </time>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>
+<article>
+  <div class="wow animate__animated animate__fadeIn"> {{ .TableOfContents }}</div>
+  <div class="post-box wow animate__animated animate__fadeIn">
+    <div class="post-content markdown-body">
+      {{ .Site.Params.postHeaderContent | safeHTML }}
+      {{ .Content }}
+    </div>
+    <div class="post-tags">
+      {{ range .Params.tags }}
+      <a href="/tags/{{ lower . | urlize }}/">
+        {{ . }}
+      </a>
+      {{ end }}
+    </div>
+    {{ if in .Site.Params.mainSections .Type }}
+    <div class="pre-next">
+      <p>
+        {{with .NextInSection}}
+        <a class="pre-next-btn bg" href="{{.Permalink}}">上一篇：{{.Title}}</a>
+        {{end}}
+      </p>
+      <p>
+        {{with .PrevInSection}}
+        <a class="pre-next-btn bg" href="{{.Permalink}}">下一篇：{{.Title}}</a>
+        {{end}}
+      </p>
+    </div>
+    {{ partial "related.html" . }}
+
+  </div>
+  <!-- comment -->
+  <div class="post-box wow animate__animated animate__fadeIn">
+    <div class="post-comments">
+      <h4 class="article-h4">评论~</h4>
+      {{ partial "comment.html" . }}
+    </div>
+    {{ end }}
+  </div>
+  {{ partial "footer.html" . }}

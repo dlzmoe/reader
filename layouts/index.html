@@ -1,0 +1,45 @@
+{{ partial "header.html" . }}
+<article>
+  <div class="search">
+    <input type="text" id="search" placeholder="Search Keyword...">
+    <script>
+      // search
+      $("#search").keypress(function (e) {
+        var searchContent = $("#search").val();
+        if (e.which == 13) {
+          window.open("https://www.google.com/search?q=site:{{ .Site.BaseURL }}%20" + searchContent, "_blank")
+        }
+      });
+    </script>
+  </div>
+  <div id="posts-list">
+    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+    {{ $projects := where .Site.RegularPages "Section" "projects" }}
+    {{ $pages = .Paginate ($pages) }}
+    {{ $archivesPage := first 2 (where .Site.RegularPages "Layout" "eq" "archives") }}
+
+    {{ range $pages.Pages }}
+    <div class="posts-line wow animate__animated animate__fadeIn">
+      <a class="posts-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <div class="markdown-body posts-content">
+        <a href="{{ .RelPermalink }}">
+          {{ .Content | truncate 100 }}
+        </a>
+      </div>
+      <div class="posts-date">
+        本条目发布于<time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">{{ .Date.Format
+          "2006-01-02"}}</time>
+        {{ with .Params.categories }}
+        ，属于
+        {{ range . }}
+        <a href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a>
+        {{ end }}分类。
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  <!-- pagination -->
+  {{ partial "pagination.html" . }}
+  {{ partial "footer.html" . }}

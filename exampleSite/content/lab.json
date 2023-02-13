@@ -1,0 +1,50 @@
+[
+  {
+    "icon": "https://cdn.staticaly.com/gh/zburu/pic-cdn@main/2022/10/19/634fafd048f26.png",
+    "name": "网址导航站",
+    "url": "https://nav.zburu.com/",
+    "des": "基于 vitepress 建立的网址导航站。"
+  },
+  {
+    "icon": "https://cdn.staticaly.com/gh/zburu/pic-cdn@main/2022/10/19/634faf703e955.png",
+    "name": "微信公众号排版编辑器",
+    "url": "https://md.zburu.com/",
+    "des": "编辑markdown语法，自定义样式复制到微信公众号编辑器。"
+  },
+  {
+    "icon": "https://cdn.staticaly.com/gh/zburu/pic-cdn@main/2022/10/20/63512b834e418.png",
+    "name": "摸鱼看掘金沸点",
+    "url": "https://greasyfork.org/zh-CN/scripts/453411-%E5%85%A8%E5%B1%80%E6%91%B8%E9%B1%BC%E7%9C%8B%E6%8E%98%E9%87%91%E6%B2%B8%E7%82%B9",
+    "des": "一个油猴脚本，可以全局查看掘金沸点，摸鱼必备。"
+  },
+  {
+    "icon": "https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221021/image.7dk6jtv3a4k0.webp",
+    "name": "图片上传管理",
+    "url": "https://img.zburu.com",
+    "des": "基于Github的图床工具，可以在线管理。"
+  },
+  {
+    "icon": "https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221021/image.1dcp8d5ifusg.webp",
+    "name": "memos在线笔记",
+    "url": "https://memos.zburu.com/",
+    "des": "私有部署的memos笔记，类flomo，简洁美观。"
+  },
+  {
+    "icon": "https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221031/image.2w4qkfdexlg0.jpg",
+    "name": "短网址生成",
+    "url": "https://go.zburu.com/",
+    "des": "一个短网址生成网站，安全稳定高效。"
+  },
+  {
+    "icon": "https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221031/image.2lsxriuhag80.jpg",
+    "name": "rss阅读器",
+    "url": "https://rss.zburu.com/",
+    "des": "基于蚁阅开源项目部署的在线rss阅读器。"
+  },
+  {
+    "icon": "https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221101/image.4a55hdrspz80.jpg",
+    "name": "萌计数",
+    "url": "https://count.zburu.com/",
+    "des": "用来统计网站访客次数，动画版更可爱。"
+  }
+]
