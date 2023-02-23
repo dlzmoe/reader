@@ -1,5 +1,4 @@
 $(function () {
-  // 手机端导航栏切换显示隐藏
   $('.menu-btn').click(function () {
     $("header .sticky").slideToggle();
     $('.opacity').toggle();
@@ -18,7 +17,6 @@ $(function () {
   });
 
   $('iframe').wrap('<p class="iframe"></p>')
-
 
   $(".totop").click(function () { $("html,body").animate({ scrollTop: 0 }, 500); });
   $(window).on("scroll", function () {
@@ -42,7 +40,6 @@ $(function () {
     });
   });
 
-  // Artalk
   $('.atk-main-editor>.atk-bottom').after($('.atk-main-editor>.atk-plug-panel-wrap'))
   
 })

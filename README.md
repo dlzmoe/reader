@@ -19,7 +19,6 @@
 
 本篇 README.md 面向主题使用者和开发者，欢迎使用和提交 pr.
 
-![](https://article.biliimg.com/bfs/article/ff86c2128625ef4e33fdefbae07d8f6ecd7a7337.png)
 
 新增：
 - [x] 图片灯箱
@@ -98,6 +97,4 @@ fork 仓库，本地开发完成提交仓库，在提交 pr 时注明修改的�
 ### 版权说明
 
 该项目签署了MIT 授权许可，详情请参阅 [LICENSE](https://github.com/lovezsh/hugo-theme-Reader/blob/main/LICENSE)
-
-
 

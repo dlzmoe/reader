@@ -1,3 +1,6 @@
+:root {
+  --time: 500ms;
+}
 #overlay,
 .cross {
   will-change: transform;
@@ -28,14 +31,14 @@
   cursor: auto;
 }
 .pop-in {
-  -webkit-animation: pop-in 250ms;
-  -moz-animation: pop-in 250ms;
-  -ms-animation: pop-in 250ms;
+  -webkit-animation: pop-in var(--time);
+  -moz-animation: pop-in var(--time);
+  -ms-animation: pop-in var(--time);
 }
 .pop-out {
-  -webkit-animation: pop-out 250ms;
-  -moz-animation: pop-out 250ms;
-  -ms-animation: pop-out 250ms;
+  -webkit-animation: pop-out var(--time);
+  -moz-animation: pop-out var(--time);
+  -ms-animation: pop-out var(--time);
 }
 #overlay {
   display: none;

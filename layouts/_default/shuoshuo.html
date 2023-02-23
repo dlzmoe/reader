@@ -1,0 +1,133 @@
+{{ partial "header.html" . }}
+<div class="post-header">
+  <h1 class="post-title">{{ .Title }}</h1>
+</div>
+<article>
+  <div class="post-box">
+
+    <style>
+      .sslist {
+        position: relative;
+      }
+
+      .sslist::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: #EDDBC7;
+        z-index: 9;
+      }
+
+      .sslist-item {
+        padding: 10px 10px 20px 30px;
+        margin-bottom: 30px;
+        border-radius: 2px;
+        line-height: 1.7;
+        background: #f9f9f9;
+        box-shadow: 1px 2px 4px #233d4e33;
+        transition: all 0.2s linear;
+        animation: up 1s forwards;
+        transform: translateY(20px);
+        opacity: 0;
+        position: relative;
+      }
+
+      .sslist-item::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 16px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #EDDBC7;
+      }
+
+      @keyframes up {
+        0% {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .sslist-item:hover {
+        opacity: 0.9;
+      }
+
+      .sslist-item .sslist-date {
+        opacity: 0.6;
+        margin: 0;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+    </style>
+
+    <div class="post-content markdown-body">
+      {{ .Site.Params.postHeaderContent | safeHTML }}
+      {{ .Content }}
+      <div class="sslist"></div>
+    </div>
+  </div>
+  {{ partial "footer.html" . }}
+  <script>
+    // 调用接口的js方法
+    function memosShow() {
+      var memosStr = "";
+      var openId = "{{ .Site.Params.memosOpenId }}";
+      $.ajax({
+        url: "https://memos.zburu.com/api/memo?openId=" + openId + "&tag=说说",
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+          // 生成数组
+          const sslist = data.data;
+
+          for (let i = 0; i < sslist.length; i++) {
+            const element = sslist[i];
+
+            // 把时间戳转为正常时间格式 2023-01-9 13:17:12
+            var date = new Date(element.createdTs * 1000);
+            Y = date.getFullYear() + "-";
+            M =
+              (date.getMonth() + 1 < 10
+                ? "0" + (date.getMonth() + 1)
+                : date.getMonth() + 1) + "-";
+            D = (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()) + " ";
+            h = date.getHours() + ":";
+            m = date.getMinutes() + ":";
+            s = date.getSeconds();
+            const createdTsNew = Y + M + D + h + m + s;
+            sslist[i].createdTs = createdTsNew;
+
+            // 利用js正则删去内容前的标签字符
+            const contentNew = element.content.slice(4);
+            sslist[i].content = contentNew;
+          }
+
+          $.each(data.data, function (i, item) {
+            list =
+              "<div class='sslist-item'>" +
+              "<p class='sslist-date'>" +
+              item.createdTs +
+              "</p>" +
+              item.content +
+              "</div>";
+            memosStr += list;
+          }),
+            $(".sslist").html(memosStr);
+        },
+        error: function () {
+          console.log("error");
+        }
+      });
+    }
+    memosShow();
+  </script>

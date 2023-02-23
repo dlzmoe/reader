@@ -9,21 +9,12 @@
 </div>
 {{ end }}
 <article>
-  <div class="post-box wow animate__animated animate__fadeIn">
-    <h1 class="post-title">分类</h1>
+  <div class="post-box">
     <div class="cate">
       {{ range .Site.Taxonomies.categories }}
       <a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a>
       {{ end }}
     </div>
-
-    <h1 class="post-title">标签</h1>
-    <div class="tags">
-      {{ range .Site.Taxonomies.tags }}
-      <a href="{{ .Page.Permalink }}"><span>{{ .Page.Title }}</span> <sup>{{ .Count }}</sup></a>
-      {{ end }}
-    </div>
-    <hr>
     <div id="posts-list" class="markdown-body">
       {{ range (where .Data.Pages "Type" "in" site.Params.mainSections).GroupByDate "2006" -}}
       <section>
