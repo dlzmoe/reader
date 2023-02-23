@@ -24,7 +24,7 @@ paginate = 6
   favicon = "https://cdn.zburu.com/favicon.ico"
   buildDate = "2020-06-14"
   beian = "浙ICP备2022002453号-2"
-  memosOpenId = "210e3351-77dd-4a55-b297-ac19f022a3bf"
+  memosOpenId = ""
 
 [permalinks]
   posts = "/archives/:slug.html/"
