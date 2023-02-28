@@ -1,16 +1,8 @@
 {{ partial "header.html" . }}
-<div class="post-header">
+<article class="post-single">
   <h1 class="post-title">{{ .Title }}</h1>
-</div>
-<article>
-  <div class="post-box">
-    <div class="post-content markdown-body">
-      {{ .Site.Params.postHeaderContent | safeHTML }}
-      {{ .Content }}
-    </div>
-
-    <div class="post-comments">
-      {{ partial "comment.html" . }}
-    </div>
+  <br>
+  <div class="post-comments">
+    {{ partial "comment.html" . }}
   </div>
   {{ partial "footer.html" . }}

@@ -1,35 +1,33 @@
 {{ partial "header.html" . }}
-<div class="post-header">
+
+<article class="post-single">
   <h1 class="post-title">{{ .Title }}</h1>
+
   {{ if in .Site.Params.mainSections .Type }}
-  <div class="post-desc">
-    <div class="post-date">
       {{ if .Date }}
       <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
-        {{ .Date.Format "2006年1月2日" }}
+        {{ .Date.Format "Jan 2, 2006" }}
       </time>
       {{ end }}
-    </div>
-  </div>
   {{ end }}
-</div>
-<article>
-  <div class="TableOfContents"> {{ .TableOfContents }}</div>
-  <div class="post-box">
-    <div class="post-content markdown-body">
-      {{ .Site.Params.postHeaderContent | safeHTML }}
-      {{ .Content }}
-    </div>
+ 
+  {{ .TableOfContents }}
+
+  <div class="post-content markdown-body">
+    {{ .Site.Params.postHeaderContent | safeHTML }}
+    {{ .Content }}
   </div>
+
 
   {{ if in .Site.Params.mainSections .Type }}
   <!-- comment -->
-  <div class="post-box">
-    <div class="post-comments">
-      <h4 class="article-h4">评论~</h4>
-      {{ partial "comment.html" . }}
-    </div>
+
+  <div class="post-comments">
+    <h4>评论~</h4>
+    <br>
+    {{ partial "comment.html" . }}
   </div>
+
   {{ end }}
-  
+
   {{ partial "footer.html" . }}

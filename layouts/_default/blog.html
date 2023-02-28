@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+
+{{ range (where .Data.Pages "Type" "in" site.Params.mainSections).GroupByDate "2006" -}}
+<section class="section year-{{ .Key }}">
+  <h4 class="section-title">{{ .Key }}</h4>
+
+  {{ range .Pages }}
+  <article >
+    <a class="post-entry" href="{{ .RelPermalink }}">
+      <h2 class="entry-title">{{ .Title }}</h2>
+      <time class="entry-time" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
+        {{ .Date.Format "1月2日"}}</time>
+    </a>
+  </article>
+  {{ end }}
+</section>
+{{ end }}
+{{ partial "footer.html" . }}

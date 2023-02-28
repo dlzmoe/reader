@@ -1,15 +1,15 @@
 baseURL = "https://zburu.com/"
 languageCode = "en-us"
 title = "子舒的博客"
-theme = "Notion"
-paginate = 6
+theme = "Reader"
+paginate = 999
 
 [markup]
   [markup.tableOfContents]  # 文章目录
     endLevel = 3
     ordered = false
   [markup.highlight]
-    style ="gruvbox"        # 高亮风格
+    style ="github-dark"        # 高亮风格
     lineNos = false         # 是否显示行号
   [markup.goldmark]         # 是否在md文件中渲染html代码
     [markup.goldmark.renderer]
@@ -24,26 +24,21 @@ paginate = 6
   favicon = "https://cdn.zburu.com/favicon.ico"
   buildDate = "2020-06-14"
   beian = "浙ICP备2022002453号-2"
-  memosOpenId = ""
 
 [permalinks]
-  posts = "/archives/:slug.html/"
+  blog = "/blog/:slug.html/"
 
 [[params.socials]]
 name = "归档"
-link = "/posts/"
-
-[[params.socials]]
-name = "留言"
-link = "/message/"
+link = "/blog/"
 
 [[params.socials]]
 name = "关于"
 link = "/about/"
 
 [[params.socials]]
-name = "动态"
-link = "/shuoshuo/"
+name = "留言"
+link = "/message/"
 
 [[params.socials]]
 name = "实验室"

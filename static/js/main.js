@@ -18,24 +18,15 @@ $(function () {
 
   $('iframe').wrap('<p class="iframe"></p>')
 
-  $(".totop").click(function () { $("html,body").animate({ scrollTop: 0 }, 500); });
-  $(window).on("scroll", function () {
-    if ($(window).scrollTop() >= 200) {
-      $('.totop').addClass('is-active')
-    } else {
-      $('.totop').removeClass('is-active')
-    }
-  });
-
   $(document).ready(function () {
     if (window.location.pathname == "/") {
-      $("#navi li:eq(0) a").addClass("active");
+      $(".nav a:eq(0)").addClass("active");
     }
     a = window.location;
-    $("#navi li a").each(function () {
+    $(".nav a").each(function () {
       b = String($(this).attr("href")).replace("/", "");
       if (String(a).indexOf(b) > 0) {
-        $(this).closest("li a").addClass("active");
+        $(this).closest("a").addClass("active");
       }
     });
   });

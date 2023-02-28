@@ -3,39 +3,14 @@
 {{ partial "head.html" . }}
 
 <body>
-  <div class="opacity"></div>
-  <header>
-    <div class="container">
-      <div class="header-item">
-
-        <a href="/" class="header-title">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="24" height="24" class="fill-current text-black dark:text-white"></rect>
-            <rect width="24" height="24" fill="url(#paint0_radial)"></rect>
-            <defs>
-              <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-                gradientTransform="rotate(45) scale(39.598)">
-                <stop stop-color="#CFCFCF" stop-opacity="0.6"></stop>
-                <stop offset="1" stop-color="#E9E9E9" stop-opacity="0"></stop>
-              </radialGradient>
-            </defs>
-          </svg>
-          {{ .Site.Params.author }}</a>
-      </div>
-      <div class="menu-btn">菜单</div>
-      <div class="header-item sticky">
-        <ul id="navi">
-          <li>
-            <a href="/">首页</a>
-          </li>
-          {{ range .Site.Params.socials }}
-          <li>
-            <a href="{{ .link }}">{{ .name }}</a>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
-    </div>
+  <header class="header">
+    <a href="/" class="logo"></a>
+    <nav class="nav">
+      {{ range .Site.Params.socials }}
+      <a href="{{ .link }}">{{ .name }}</a>
+      {{ end }}
+      <a href="https://zweekly.netlify.app/" target="_blank">周刊</a>
+    </nav>
+    <a href="https://zburu.com/index.xml" target="_blank">RSS</a>
   </header>
-
-  <div class="body">
+  <main class="main">

@@ -1,14 +1,5 @@
-<div class="utool">
-  <div class="item totop">
-    <span>top</span>
-  </div>
-</div>
-
-
-<!-- end -->
-</article>
-
-<div class="footer">
+</main>
+<footer class="footer">
   <p>
     © 2020 - <span id="year"></span>
     <i>·</i>
@@ -16,9 +7,8 @@
       <span>{{ .Site.Params.beian }}</span>
     </a>
   </p>
-  <i>·</i>
   <p>网站已经运行 <span id="days">0</span></p>
-</div>
+</footer>
 
 <script>
   var s0 = '{{ .Site.Params.buildDate }}';
@@ -46,7 +36,7 @@
   setInterval("ShowRunTime('days')", 1000);
 </script>
 
-</div>
 {{ partial "scripts.html" . }}
 </body>
+
 </html>
