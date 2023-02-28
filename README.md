@@ -48,6 +48,7 @@ git clone git@github.com:lovezsh/hugo-theme-Reader.git themes/Reader
 theme = "Reader"
 ```
 
+注意：`/content` 文件夹下文章文件夹名要改成 `/blog`，不然会出现不可预知的错误。详情看 `/exampleSite` 示例。
 
 ### 文件目录说明
 eg:
