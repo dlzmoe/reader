@@ -19,7 +19,8 @@ paginate = 999
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-  title = "子舒的博客"
+  title = "不如吃茶去"
+  logo = "https://cdn.zburu.com/author1.png"
   author = "子舒"
   favicon = "https://cdn.zburu.com/favicon.ico"
   buildDate = "2020-06-14"
@@ -29,7 +30,7 @@ paginate = 999
   blog = "/blog/:slug.html/"
 
 [[params.socials]]
-name = "归档"
+name = "博客"
 link = "/blog/"
 
 [[params.socials]]
@@ -43,4 +44,3 @@ link = "/message/"
 [[params.socials]]
 name = "实验室"
 link = "/lab/"
-
