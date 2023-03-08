@@ -1,28 +1,31 @@
 {{ partial "header.html" . }}
 
 <article class="post-single">
-  <h1 class="post-title">{{ .Title }}</h1>
+  <section class="section">
+    <h1 class="post-title">{{ .Title }}</h1>
 
-  {{ if in .Site.Params.mainSections .Type }}
-      {{ if .Date }}
-      <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
-        {{ .Date.Format "Jan 2, 2006" }}
-      </time>
-      {{ end }}
-  {{ end }}
- 
-  {{ .TableOfContents }}
+    {{ if in .Site.Params.mainSections .Type }}
+    {{ if .Date }}
+    <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
+      {{ .Date.Format "Jan 2, 2006" }}
+    </time>
+    {{ end }}
+    {{ end }}
 
-  <div class="post-content markdown-body">
-    {{ .Site.Params.postHeaderContent | safeHTML }}
-    {{ .Content }}
-  </div>
+    {{ .TableOfContents }}
+
+    <div class="post-content markdown-body">
+      {{ .Site.Params.postHeaderContent | safeHTML }}
+      {{ .Content }}
+    </div>
+  </section>
 
 
   {{ if in .Site.Params.mainSections .Type }}
   <!-- comment -->
 
   <div class="post-comments">
+    <br>
     <h4>评论~</h4>
     <br>
     {{ partial "comment.html" . }}

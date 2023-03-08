@@ -1,0 +1,89 @@
+.artalk {
+  .atk-main-editor {
+    border: none;
+    overflow: inherit;
+    background: none;
+
+    .atk-header {
+      padding: 0;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      input {
+        flex: inherit;
+        width: 31%;
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.05);
+        background: #fff;
+        border-radius: 0;
+        border: 1px solid #eee;
+        padding: 6px 10px;
+        margin-bottom: 1em;
+        transition: all 0.1s linear;
+        font-size: 16px;
+
+        &:focus {
+          box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+    .atk-textarea-wrap {
+      .atk-textarea {
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.05);
+        background: #fff;
+        padding: 10px;
+        border: 1px solid #eee;
+        transition: all 0.1s linear;
+        font-size: 16px;
+
+        &:focus {
+          box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
+  .atk-list-comments-wrap {
+    & > .atk-comment-wrap {
+      box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.05);
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #eee;
+      margin-bottom: 1em;
+    }
+  }
+
+  .atk-list-footer {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .artalk .atk-main-editor .atk-header input {
+    width: 100%;
+  }
+}
+
+#TableOfContents {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  & > ul {
+    background: #f3f3f3;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    line-height: 2;
+  }
+}
+
+.atk-sidebar-layer {
+  width: 700px;
+}
+
+@media (max-width: 700px) {
+  .atk-sidebar-layer {
+    width: 100%;
+  }
+}
