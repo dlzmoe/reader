@@ -3,13 +3,23 @@
 {{ partial "head.html" . }}
 
 <body>
+  <div class="search-bg"></div>
+  <div id="search">
+    <form class="search">
+      <input type="text" id="searchTerm" name="searchTerm" autocomplete="off" oninput="initiateSearch()">
+    </form>
+    <div id="resultsContainer">
+      <p class="hint">请输入关键词进行搜索...</p>
+    </div>
+  </div>
   <header class="header">
     <a href="/" class="logo"></a>
     <nav class="nav">
       {{ range .Site.Params.socials }}
       <a href="{{ .link }}">{{ .name }}</a>
       {{ end }}
-      <a href="https://zweekly.netlify.app/" target="_blank">周刊</a>
+      <a href="javascript:void(0)" id="startSearch">搜索</a>
+      <a href="https://zweekly.zsh.im/" target="_blank">周刊</a>
     </nav>
     <a href="https://zburu.com/index.xml" target="_blank">RSS</a>
   </header>

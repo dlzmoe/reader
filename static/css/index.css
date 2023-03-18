@@ -45,10 +45,6 @@ ul {
   margin: 0;
 }
 
-li {
-  list-style: none;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -73,14 +69,16 @@ button {
   border-radius: 4px;
 }
 
-html {
-  overflow-y: scroll;
+* {
+  box-sizing: border-box;
 }
 
 /* Style
 -------------------------------------------------- */
 body {
   background: #fafafa;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .home:not(.single) .header {
@@ -135,6 +133,7 @@ body {
   line-height: 64px;
   letter-spacing: 1px;
   transition: all 0.1s linear;
+  white-space: nowrap;
 }
 
 .nav a.active,
@@ -274,7 +273,7 @@ body {
 .post-content img {
   display: block;
   max-width: 100%;
-  margin: 48px auto;
+  margin: 0 auto 40px;
 }
 
 .post-content iframe {
@@ -491,7 +490,7 @@ body {
   background: #f3f3f3;
   padding: 15px;
   border-radius: 6px;
-  margin-top: 20px;
+  list-style: none;
 }
 
 .github {
@@ -519,4 +518,91 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+/* search */
+.search-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  display: none;
+}
+
+#search {
+  display: none;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10vh;
+  background: #fff;
+  width: 600px;
+  z-index: 100;
+  padding: 15px;
+  box-shadow: -2px 2px 14px 3px rgba(66, 66, 66, 0.37);
+  border-radius: 5px;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+.search #searchTerm {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 0 15px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#resultsContainer {
+  margin-top: 20px;
+  overflow: auto;
+  max-height: 75vh;
+}
+#resultsContainer::-webkit-scrollbar {
+  width: 18px;
+  height: 18px;
+  background: #f2f2f2;
+}
+#resultsContainer::-webkit-scrollbar-thumb {
+  background: #c8c8c8;
+}
+#resultsContainer::-webkit-scrollbar-thumb {
+  transition: border-width 0.5s;
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-radius: 0.8em;
+  background-clip: padding-box;
+}
+#resultsContainer .hint {
+  text-align: center;
+}
+#resultsContainer div {
+  margin-bottom: 10px;
+  margin: 0;
+}
+#resultsContainer div a {
+  display: block;
+  width: 100%;
+  padding: 6px 10px;
+  transition: all 0.1s linear;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#resultsContainer div a:hover {
+  background: #f3f3f3;
+}
+
+@media (max-width: 600px) {
+  #search {
+    width: 95%;
+    margin: 0 auto;
+  }
 }

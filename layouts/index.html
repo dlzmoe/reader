@@ -23,6 +23,7 @@
   <br>
   <p>不如吃茶去，随笔 --- 这是子舒的博客。</p>
   <p>前端程序员，喜欢折腾一些技术，研究各种奇怪的程序和网站。</p>
+  <p>网站已经运行 <span id="days">0</span></p>
   <br>
   <p><a href="/blog/">点击查看文章 >></a></p>
   <p><a href="/message/">前往留言板 >></a></p>
@@ -373,3 +374,20 @@
     }
   }
 </style>
+
+<script>
+  var BootDate = new Date("{{ .Site.Params.buildDate }}");
+  function ShowRunTime(id) {
+    var NowDate = new Date();
+    var RunDateM = parseInt(NowDate - BootDate);
+    var RunDays = Math.floor(RunDateM / (24 * 3600 * 1000));
+    var RunHours = Math.floor(RunDateM % (24 * 3600 * 1000) / (3600 * 1000));
+    var RunMinutes = Math.floor(RunDateM % (24 * 3600 * 1000) % (3600 * 1000) / (60 * 1000));
+    var RunSeconds = Math.round(RunDateM % (24 * 3600 * 1000) % (3600 * 1000) % (60 * 1000) / 1000);
+    var days = RunDays + "天" + RunHours + "时" + RunMinutes + "分" + RunSeconds + "秒了。";
+    document.getElementById(id).innerHTML = days;
+  }
+  ShowRunTime('days');
+  setInterval("ShowRunTime('days')", 1000);
+</script>
+<script src="{{ .Site.Params.staticPrefix }}{{ "js/search.js" | relURL }}"></script>

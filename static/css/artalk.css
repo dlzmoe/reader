@@ -41,6 +41,10 @@
   border: 1px solid #eee;
   margin-bottom: 1em;
 }
+.artalk .atk-list-comments-wrap > .atk-comment-wrap .atk-content img[atk-emoticon] {
+  height: 28px;
+  vertical-align: top;
+}
 .artalk .atk-list-footer {
   display: none;
 }

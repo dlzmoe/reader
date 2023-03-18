@@ -32,5 +32,7 @@ $(function () {
   });
 
   $('.atk-main-editor>.atk-bottom').after($('.atk-main-editor>.atk-plug-panel-wrap'))
+
+
   
 })

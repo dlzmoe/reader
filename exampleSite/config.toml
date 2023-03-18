@@ -9,7 +9,7 @@ paginate = 999
     endLevel = 3
     ordered = false
   [markup.highlight]
-    style ="github-dark"        # 高亮风格
+    style ="base16-snazzy"    # 高亮风格
     lineNos = false         # 是否显示行号
   [markup.goldmark]         # 是否在md文件中渲染html代码
     [markup.goldmark.renderer]
@@ -34,13 +34,14 @@ name = "博客"
 link = "/blog/"
 
 [[params.socials]]
-name = "关于"
-link = "/about/"
-
-[[params.socials]]
 name = "留言"
 link = "/message/"
 
 [[params.socials]]
+name = "关于"
+link = "/about/"
+
+[[params.socials]]
 name = "实验室"
 link = "/lab/"
+

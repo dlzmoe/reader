@@ -50,6 +50,13 @@
       padding: 10px;
       border: 1px solid #eee;
       margin-bottom: 1em;
+
+      .atk-content {
+        img[atk-emoticon] {
+          height: 28px;
+          vertical-align: top;
+        }
+      }
     }
   }
 
