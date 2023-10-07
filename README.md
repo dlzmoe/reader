@@ -1,16 +1,16 @@
 <p align="center">
-  <a href="https://github.com/zishume/hugo-theme-Reader/">
+  <a href="https://github.com/98zi/hugo-theme-Reader/">
     <img src="images/logo.png" alt="Logo" width="300">
   </a>
   <p align="center">
    一款简单的、易于阅读的 hugo 主题，集成了多种功能。
     <br />
-    <a href="https://github.com/zishume/hugo-theme-Reader"><strong>探索本项目的文档 »</strong></a>
+    <a href="https://github.com/98zi/hugo-theme-Reader"><strong>探索本项目的文档 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/zishume/hugo-theme-Reader/issues">报告Bug</a>
+    <a href="https://github.com/98zi/hugo-theme-Reader/issues">报告Bug</a>
     ·
-    <a href="https://github.com/zishume/hugo-theme-Reader/issues">提出新特性</a>
+    <a href="https://github.com/98zi/hugo-theme-Reader/issues">提出新特性</a>
   </p>
 
 </p>
@@ -37,7 +37,7 @@
 ### 上手指南
 
 ```shell
-git clone git@github.com:zishume/hugo-theme-Reader.git themes/Reader
+git clone git@github.com:98zi/hugo-theme-Reader.git themes/Reader
 ```
 
 修改 `config.toml`:
@@ -89,11 +89,11 @@ fork 仓库，本地开发完成提交仓库，在提交 pr 时注明修改的�
 
 ### 作者
 
-子舒（me@zsh.im）
+子舒（anghunk@gmail.com）
 
  *您也可以在贡献者名单中参看所有参与该项目的开发者。*
 
 ### 版权说明
 
-该项目签署了MIT 授权许可，详情请参阅 [LICENSE](https://github.com/zishume/hugo-theme-Reader/blob/main/LICENSE)
+该项目签署了MIT 授权许可，详情请参阅 [LICENSE](https://github.com/98zi/hugo-theme-Reader/blob/main/LICENSE)
 
